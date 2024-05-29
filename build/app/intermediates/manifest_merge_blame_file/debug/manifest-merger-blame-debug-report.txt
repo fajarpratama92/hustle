@@ -1,0 +1,851 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="co.id.hustlehouse"
+4    android:versionCode="7"
+5    android:versionName="1.0.9" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="33" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/Users/cranium-fajar/Cranium/mobile-flutter/android/app/src/main/AndroidManifest.xml:3:5-66
+15-->/Users/cranium-fajar/Cranium/mobile-flutter/android/app/src/main/AndroidManifest.xml:3:22-64
+16
+17    <queries>
+17-->/Users/cranium-fajar/Cranium/mobile-flutter/android/app/src/main/AndroidManifest.xml:5:5-8:15
+18        <provider android:authorities="com.facebook.katana.provider.PlatformProvider" />
+18-->/Users/cranium-fajar/Cranium/mobile-flutter/android/app/src/main/AndroidManifest.xml:6:9-89
+18-->/Users/cranium-fajar/Cranium/mobile-flutter/android/app/src/main/AndroidManifest.xml:6:19-86
+19        <provider android:authorities="com.facebook.orca.provider.PlatformProvider" />
+19-->/Users/cranium-fajar/Cranium/mobile-flutter/android/app/src/main/AndroidManifest.xml:6:9-89
+19-->/Users/cranium-fajar/Cranium/mobile-flutter/android/app/src/main/AndroidManifest.xml:6:19-86
+20
+21        <package android:name="com.facebook.katana" />
+21-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:18:9-55
+21-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:18:18-52
+22    </queries> <!-- Create a unique permission for your app and use it so only your app can receive your OneSignal messages. -->
+23    <permission
+23-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:10:5-12:47
+24        android:name="co.id.hustlehouse.permission.C2D_MESSAGE"
+24-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:11:9-63
+25        android:protectionLevel="signature" />
+25-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:12:9-44
+26
+27    <uses-permission android:name="co.id.hustlehouse.permission.C2D_MESSAGE" /> <!-- Required runtime permission to display notifications on Android 13 -->
+27-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:14:5-79
+27-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:14:22-76
+28    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- Required, makes sure notifications are delivered on time. -->
+28-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:17:5-77
+28-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:17:22-74
+29    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- c2dm RECEIVE are basic requirements for push messages through Google's FCM -->
+29-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:18:5-68
+29-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:18:22-65
+30    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+30-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:19:5-82
+30-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:19:22-79
+31    <!--
+32 Required so the device vibrates on receiving a push notification.
+33         Vibration settings of the device still apply.
+34    -->
+35    <uses-permission android:name="android.permission.VIBRATE" />
+35-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:24:5-66
+35-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:24:22-63
+36    <!--
+37 Use to restore notifications the user hasn't interacted with.
+38     They could be missed notifications if the user reboots their device if this isn't in place.
+39    -->
+40    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- START: ShortcutBadger -->
+40-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:29:5-81
+40-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:29:22-78
+41    <!-- Samsung -->
+42    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+42-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:31:5-86
+42-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:31:22-83
+43    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" /> <!-- HTC -->
+43-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:32:5-87
+43-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:32:22-84
+44    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+44-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:33:5-81
+44-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:33:22-78
+45    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" /> <!-- Sony -->
+45-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:34:5-83
+45-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:34:22-80
+46    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+46-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:35:5-88
+46-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:35:22-85
+47    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" /> <!-- Apex -->
+47-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:36:5-92
+47-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:36:22-89
+48    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" /> <!-- Solid -->
+48-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:37:5-84
+48-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:37:22-81
+49    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" /> <!-- Huawei -->
+49-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:38:5-83
+49-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:38:22-80
+50    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+50-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:39:5-91
+50-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:39:22-88
+51    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+51-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:40:5-92
+51-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:40:22-89
+52    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" /> <!-- ZUK -->
+52-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:41:5-93
+52-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:41:22-90
+53    <uses-permission android:name="android.permission.READ_APP_BADGE" /> <!-- OPPO -->
+53-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:42:5-73
+53-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:42:22-70
+54    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
+54-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:43:5-82
+54-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:43:22-79
+55    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" /> <!-- EvMe -->
+55-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:44:5-83
+55-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:44:22-80
+56    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
+56-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:45:5-88
+56-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:45:22-85
+57    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
+57-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:46:5-89
+57-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:46:22-86
+58    <!--
+59         At a minimum the location module requires course permission, the app has the option
+60         to also include ACCESS_FINE_LOCATION and/or ACCESS_BACKGROUND_LOCATION
+61    -->
+62    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+62-->[com.onesignal:location:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/7be3e76aca8ef40c9ba4865f375523da/transformed/jetified-location-5.0.4/AndroidManifest.xml:13:5-81
+62-->[com.onesignal:location:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/7be3e76aca8ef40c9ba4865f375523da/transformed/jetified-location-5.0.4/AndroidManifest.xml:13:22-78
+63    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+63-->[com.onesignal:core:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/520a38d0652c532e78a520b382d01f67/transformed/jetified-core-5.0.4/AndroidManifest.xml:10:5-79
+63-->[com.onesignal:core:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/520a38d0652c532e78a520b382d01f67/transformed/jetified-core-5.0.4/AndroidManifest.xml:10:22-76
+64    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+64-->[com.facebook.android:facebook-core:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/09a41d63f7eb4a4514e59eeed2649797/transformed/jetified-facebook-core-16.1.3/AndroidManifest.xml:16:5-79
+64-->[com.facebook.android:facebook-core:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/09a41d63f7eb4a4514e59eeed2649797/transformed/jetified-facebook-core-16.1.3/AndroidManifest.xml:16:22-76
+65    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+65-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:28:5-77
+65-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:28:22-74
+66
+67    <permission
+67-->[androidx.core:core:1.10.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:22:5-24:47
+68        android:name="co.id.hustlehouse.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+68-->[androidx.core:core:1.10.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:23:9-81
+69        android:protectionLevel="signature" />
+69-->[androidx.core:core:1.10.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:24:9-44
+70
+71    <uses-permission android:name="co.id.hustlehouse.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+71-->[androidx.core:core:1.10.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:26:5-97
+71-->[androidx.core:core:1.10.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:26:22-94
+72    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+72-->[com.android.installreferrer:installreferrer:1.0] /Users/cranium-fajar/.gradle/caches/transforms-3/da8f4c070abdf0ee929fda81060ed868/transformed/jetified-installreferrer-1.0/AndroidManifest.xml:9:5-110
+72-->[com.android.installreferrer:installreferrer:1.0] /Users/cranium-fajar/.gradle/caches/transforms-3/da8f4c070abdf0ee929fda81060ed868/transformed/jetified-installreferrer-1.0/AndroidManifest.xml:9:22-107
+73
+74    <application
+75        android:name="android.app.Application"
+76        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+76-->[androidx.core:core:1.10.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:28:18-86
+77        android:debuggable="true"
+78        android:icon="@mipmap/ic_launcher"
+79        android:label="Hustle"
+80        android:supportsRtl="true" >
+80-->[com.facebook.android:facebook-login:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/82efa157490daf832e99c97efe96abdf/transformed/jetified-facebook-login-16.1.3/AndroidManifest.xml:16:18-44
+81        <meta-data
+82            android:name="com.facebook.sdk.ApplicationId"
+83            android:value="@string/facebook_app_id" />
+84        <meta-data
+85            android:name="com.facebook.sdk.ClientToken"
+86            android:value="@string/facebook_client_token" />
+87
+88        <activity
+89            android:name="co.id.hustlehouse.hustle_house_flutter.MainActivity"
+90            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+91            android:exported="true"
+92            android:hardwareAccelerated="true"
+93            android:launchMode="singleTop"
+94            android:theme="@style/LaunchTheme"
+95            android:windowSoftInputMode="adjustResize" >
+96
+97            <!--
+98                 Specifies an Android theme to apply to this Activity as soon as
+99                 the Android process has started. This theme is visible to the user
+100                 while the Flutter UI initializes. After that, this theme continues
+101                 to determine the Window background behind the Flutter UI.
+102            -->
+103            <meta-data
+104                android:name="io.flutter.embedding.android.NormalTheme"
+105                android:resource="@style/NormalTheme" />
+106
+107            <intent-filter>
+108                <action android:name="android.intent.action.MAIN" />
+109
+110                <category android:name="android.intent.category.LAUNCHER" />
+111            </intent-filter>
+112        </activity>
+113        <!--
+114             Don't delete the meta-data below.
+115             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+116        -->
+117        <meta-data
+118            android:name="flutterEmbedding"
+119            android:value="2" />
+120        <meta-data
+121            android:name="com.onesignal.messaging.default_notification_icon"
+122            android:resource="@drawable/ic_stat_onesignal_default" />
+123        <meta-data
+124            android:name="com.onesignal.NotificationAccentColor.DEFAULT"
+125            android:value="000000" />
+126
+127        <provider
+127-->[:image_picker_android] /Users/cranium-fajar/Cranium/mobile-flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+128            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+128-->[:image_picker_android] /Users/cranium-fajar/Cranium/mobile-flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-82
+129            android:authorities="co.id.hustlehouse.flutter.image_provider"
+129-->[:image_picker_android] /Users/cranium-fajar/Cranium/mobile-flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-74
+130            android:exported="false"
+130-->[:image_picker_android] /Users/cranium-fajar/Cranium/mobile-flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+131            android:grantUriPermissions="true" >
+131-->[:image_picker_android] /Users/cranium-fajar/Cranium/mobile-flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+132            <meta-data
+132-->[:image_picker_android] /Users/cranium-fajar/Cranium/mobile-flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:75
+133                android:name="android.support.FILE_PROVIDER_PATHS"
+133-->[:image_picker_android] /Users/cranium-fajar/Cranium/mobile-flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
+134                android:resource="@xml/flutter_image_picker_file_paths" />
+134-->[:image_picker_android] /Users/cranium-fajar/Cranium/mobile-flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-72
+135        </provider>
+136
+137        <receiver
+137-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:49:9-60:20
+138            android:name="com.onesignal.notifications.receivers.FCMBroadcastReceiver"
+138-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:50:13-86
+139            android:exported="true"
+139-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:51:13-36
+140            android:permission="com.google.android.c2dm.permission.SEND" >
+140-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:52:13-73
+141
+142            <!-- High priority so OneSignal payloads can be filtered from other FCM receivers -->
+143            <intent-filter android:priority="999" >
+143-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:55:13-59:29
+143-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:55:28-50
+144                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+144-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:56:17-81
+144-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:56:25-78
+145
+146                <category android:name="co.id.hustlehouse" />
+146-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:58:17-61
+146-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:58:27-58
+147            </intent-filter>
+148        </receiver>
+149
+150        <service
+150-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:62:9-68:19
+151            android:name="com.onesignal.notifications.services.HmsMessageServiceOneSignal"
+151-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:63:13-91
+152            android:exported="false" >
+152-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:64:13-37
+153            <intent-filter>
+153-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:65:13-67:29
+154                <action android:name="com.huawei.push.action.MESSAGING_EVENT" />
+154-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:66:17-81
+154-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:66:25-78
+155            </intent-filter>
+156        </service>
+157
+158        <activity
+158-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:70:9-78:20
+159            android:name="com.onesignal.notifications.activities.NotificationOpenedActivityHMS"
+159-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:71:13-96
+160            android:exported="true"
+160-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:72:13-36
+161            android:noHistory="true"
+161-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:73:13-37
+162            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+162-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:74:13-72
+163            <intent-filter>
+163-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:75:13-77:29
+164                <action android:name="android.intent.action.VIEW" />
+164-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:76:17-69
+164-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:76:25-66
+165            </intent-filter>
+166        </activity>
+167
+168        <receiver
+168-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:80:9-82:39
+169            android:name="com.onesignal.notifications.receivers.NotificationDismissReceiver"
+169-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:81:13-93
+170            android:exported="true" />
+170-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:82:13-36
+171        <receiver
+171-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:83:9-90:20
+172            android:name="com.onesignal.notifications.receivers.BootUpReceiver"
+172-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:84:13-80
+173            android:exported="true" >
+173-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:85:13-36
+174            <intent-filter>
+174-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:86:13-89:29
+175                <action android:name="android.intent.action.BOOT_COMPLETED" />
+175-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:87:17-79
+175-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:87:25-76
+176                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+176-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:88:17-82
+176-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:88:25-79
+177            </intent-filter>
+178        </receiver>
+179        <receiver
+179-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:91:9-97:20
+180            android:name="com.onesignal.notifications.receivers.UpgradeReceiver"
+180-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:92:13-81
+181            android:exported="true" >
+181-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:93:13-36
+182            <intent-filter>
+182-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:94:13-96:29
+183                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+183-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:95:17-84
+183-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:95:25-81
+184            </intent-filter>
+185        </receiver>
+186
+187        <activity
+187-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:99:9-105:75
+188            android:name="com.onesignal.notifications.activities.NotificationOpenedActivity"
+188-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:100:13-93
+189            android:excludeFromRecents="true"
+189-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:101:13-46
+190            android:exported="true"
+190-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:102:13-36
+191            android:noHistory="true"
+191-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:103:13-37
+192            android:taskAffinity=""
+192-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:104:13-36
+193            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+193-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:105:13-72
+194        <activity
+194-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:106:9-111:75
+195            android:name="com.onesignal.notifications.activities.NotificationOpenedActivityAndroid22AndOlder"
+195-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:107:13-110
+196            android:excludeFromRecents="true"
+196-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:108:13-46
+197            android:exported="true"
+197-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:109:13-36
+198            android:noHistory="true"
+198-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:110:13-37
+199            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+199-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:111:13-72
+200
+201        <service
+201-->[com.onesignal:core:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/520a38d0652c532e78a520b382d01f67/transformed/jetified-core-5.0.4/AndroidManifest.xml:13:9-16:43
+202            android:name="com.onesignal.core.services.SyncService"
+202-->[com.onesignal:core:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/520a38d0652c532e78a520b382d01f67/transformed/jetified-core-5.0.4/AndroidManifest.xml:14:13-67
+203            android:exported="false"
+203-->[com.onesignal:core:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/520a38d0652c532e78a520b382d01f67/transformed/jetified-core-5.0.4/AndroidManifest.xml:15:13-37
+204            android:stopWithTask="true" />
+204-->[com.onesignal:core:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/520a38d0652c532e78a520b382d01f67/transformed/jetified-core-5.0.4/AndroidManifest.xml:16:13-40
+205        <service
+205-->[com.onesignal:core:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/520a38d0652c532e78a520b382d01f67/transformed/jetified-core-5.0.4/AndroidManifest.xml:17:9-20:72
+206            android:name="com.onesignal.core.services.SyncJobService"
+206-->[com.onesignal:core:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/520a38d0652c532e78a520b382d01f67/transformed/jetified-core-5.0.4/AndroidManifest.xml:18:13-70
+207            android:exported="false"
+207-->[com.onesignal:core:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/520a38d0652c532e78a520b382d01f67/transformed/jetified-core-5.0.4/AndroidManifest.xml:19:13-37
+208            android:permission="android.permission.BIND_JOB_SERVICE" />
+208-->[com.onesignal:core:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/520a38d0652c532e78a520b382d01f67/transformed/jetified-core-5.0.4/AndroidManifest.xml:20:13-69
+209
+210        <activity
+210-->[com.onesignal:core:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/520a38d0652c532e78a520b382d01f67/transformed/jetified-core-5.0.4/AndroidManifest.xml:22:9-25:75
+211            android:name="com.onesignal.core.activities.PermissionsActivity"
+211-->[com.onesignal:core:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/520a38d0652c532e78a520b382d01f67/transformed/jetified-core-5.0.4/AndroidManifest.xml:23:13-77
+212            android:exported="false"
+212-->[com.onesignal:core:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/520a38d0652c532e78a520b382d01f67/transformed/jetified-core-5.0.4/AndroidManifest.xml:24:13-37
+213            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+213-->[com.onesignal:core:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/520a38d0652c532e78a520b382d01f67/transformed/jetified-core-5.0.4/AndroidManifest.xml:25:13-72
+214        <activity
+214-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:22:9-25:66
+215            android:name="com.facebook.FacebookActivity"
+215-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:23:13-57
+216            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+216-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:24:13-96
+217            android:theme="@style/com_facebook_activity_theme" />
+217-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:25:13-63
+218        <activity android:name="com.facebook.CustomTabMainActivity" />
+218-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:26:9-71
+218-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:26:19-68
+219        <activity
+219-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:27:9-41:20
+220            android:name="com.facebook.CustomTabActivity"
+220-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:28:13-58
+221            android:exported="true" >
+221-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:29:13-36
+222            <intent-filter>
+222-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:31:13-40:29
+223                <action android:name="android.intent.action.VIEW" />
+223-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:76:17-69
+223-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:76:25-66
+224
+225                <category android:name="android.intent.category.DEFAULT" />
+225-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:34:17-76
+225-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:34:27-73
+226                <category android:name="android.intent.category.BROWSABLE" />
+226-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:35:17-78
+226-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:35:27-75
+227
+228                <data
+228-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:37:17-39:50
+229                    android:host="cct.co.id.hustlehouse"
+229-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:38:21-56
+230                    android:scheme="fbconnect" />
+230-->[com.facebook.android:facebook-common:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/eb643629aa467b0e5d9332acf70df9a4/transformed/jetified-facebook-common-16.1.3/AndroidManifest.xml:39:21-47
+231            </intent-filter>
+232        </activity>
+233        <activity
+233-->[com.google.android.gms:play-services-auth:20.7.0] /Users/cranium-fajar/.gradle/caches/transforms-3/1dd93dfa68077670fe15796ffe5306f3/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
+234            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+234-->[com.google.android.gms:play-services-auth:20.7.0] /Users/cranium-fajar/.gradle/caches/transforms-3/1dd93dfa68077670fe15796ffe5306f3/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
+235            android:excludeFromRecents="true"
+235-->[com.google.android.gms:play-services-auth:20.7.0] /Users/cranium-fajar/.gradle/caches/transforms-3/1dd93dfa68077670fe15796ffe5306f3/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
+236            android:exported="false"
+236-->[com.google.android.gms:play-services-auth:20.7.0] /Users/cranium-fajar/.gradle/caches/transforms-3/1dd93dfa68077670fe15796ffe5306f3/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
+237            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+237-->[com.google.android.gms:play-services-auth:20.7.0] /Users/cranium-fajar/.gradle/caches/transforms-3/1dd93dfa68077670fe15796ffe5306f3/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
+238        <!--
+239            Service handling Google Sign-In user revocation. For apps that do not integrate with
+240            Google Sign-In, this service will never be started.
+241        -->
+242        <service
+242-->[com.google.android.gms:play-services-auth:20.7.0] /Users/cranium-fajar/.gradle/caches/transforms-3/1dd93dfa68077670fe15796ffe5306f3/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
+243            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+243-->[com.google.android.gms:play-services-auth:20.7.0] /Users/cranium-fajar/.gradle/caches/transforms-3/1dd93dfa68077670fe15796ffe5306f3/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
+244            android:exported="true"
+244-->[com.google.android.gms:play-services-auth:20.7.0] /Users/cranium-fajar/.gradle/caches/transforms-3/1dd93dfa68077670fe15796ffe5306f3/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
+245            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+245-->[com.google.android.gms:play-services-auth:20.7.0] /Users/cranium-fajar/.gradle/caches/transforms-3/1dd93dfa68077670fe15796ffe5306f3/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
+246            android:visibleToInstantApps="true" />
+246-->[com.google.android.gms:play-services-auth:20.7.0] /Users/cranium-fajar/.gradle/caches/transforms-3/1dd93dfa68077670fe15796ffe5306f3/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
+247
+248        <activity
+248-->[com.google.android.gms:play-services-base:18.0.1] /Users/cranium-fajar/.gradle/caches/transforms-3/aba8f806953ea3dd8f794da3aeb78a12/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+249            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+249-->[com.google.android.gms:play-services-base:18.0.1] /Users/cranium-fajar/.gradle/caches/transforms-3/aba8f806953ea3dd8f794da3aeb78a12/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+250            android:exported="false"
+250-->[com.google.android.gms:play-services-base:18.0.1] /Users/cranium-fajar/.gradle/caches/transforms-3/aba8f806953ea3dd8f794da3aeb78a12/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+251            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+251-->[com.google.android.gms:play-services-base:18.0.1] /Users/cranium-fajar/.gradle/caches/transforms-3/aba8f806953ea3dd8f794da3aeb78a12/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+252
+253        <receiver
+253-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:28:9-35:20
+254            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+254-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:29:13-78
+255            android:exported="true"
+255-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:30:13-36
+256            android:permission="com.google.android.c2dm.permission.SEND" >
+256-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:31:13-73
+257            <intent-filter>
+257-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:32:13-34:29
+258                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+258-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:56:17-81
+258-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:56:25-78
+259            </intent-filter>
+260        </receiver>
+261        <!--
+262             FirebaseMessagingService performs security checks at runtime,
+263             but set to not exported to explicitly avoid allowing another app to call it.
+264        -->
+265        <service
+265-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:41:9-48:19
+266            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+266-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:42:13-82
+267            android:directBootAware="true"
+267-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:43:13-43
+268            android:exported="false" >
+268-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:44:13-37
+269            <intent-filter android:priority="-500" >
+269-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:45:13-47:29
+269-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:45:28-51
+270                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+270-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:46:17-78
+270-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:46:25-75
+271            </intent-filter>
+272        </service>
+273        <service
+273-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:49:9-55:19
+274            android:name="com.google.firebase.components.ComponentDiscoveryService"
+274-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:50:13-84
+275            android:directBootAware="true"
+275-->[com.google.firebase:firebase-common:20.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/61e5283ea22c204105cc40b77bac99f2/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:35:13-43
+276            android:exported="false" >
+276-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:51:13-37
+277            <meta-data
+277-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:52:13-54:85
+278                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+278-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:53:17-119
+279                android:value="com.google.firebase.components.ComponentRegistrar" />
+279-->[com.google.firebase:firebase-messaging:23.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/6317f9d10d934e53c969dd108b890990/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:54:17-82
+280            <meta-data
+280-->[com.google.firebase:firebase-datatransport:18.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/f77c7b1d88113e80203c8c442aa171cb/transformed/jetified-firebase-datatransport-18.0.0/AndroidManifest.xml:28:13-30:85
+281                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+281-->[com.google.firebase:firebase-datatransport:18.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/f77c7b1d88113e80203c8c442aa171cb/transformed/jetified-firebase-datatransport-18.0.0/AndroidManifest.xml:29:17-115
+282                android:value="com.google.firebase.components.ComponentRegistrar" />
+282-->[com.google.firebase:firebase-datatransport:18.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/f77c7b1d88113e80203c8c442aa171cb/transformed/jetified-firebase-datatransport-18.0.0/AndroidManifest.xml:30:17-82
+283            <meta-data
+283-->[com.google.firebase:firebase-installations:17.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/523e35eb47aebe86b4d07abcedbad9d8/transformed/jetified-firebase-installations-17.0.0/AndroidManifest.xml:18:13-20:85
+284                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+284-->[com.google.firebase:firebase-installations:17.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/523e35eb47aebe86b4d07abcedbad9d8/transformed/jetified-firebase-installations-17.0.0/AndroidManifest.xml:19:17-127
+285                android:value="com.google.firebase.components.ComponentRegistrar" />
+285-->[com.google.firebase:firebase-installations:17.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/523e35eb47aebe86b4d07abcedbad9d8/transformed/jetified-firebase-installations-17.0.0/AndroidManifest.xml:20:17-82
+286        </service>
+287
+288        <provider
+288-->[com.google.firebase:firebase-common:20.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/61e5283ea22c204105cc40b77bac99f2/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:26:9-31:39
+289            android:name="com.google.firebase.provider.FirebaseInitProvider"
+289-->[com.google.firebase:firebase-common:20.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/61e5283ea22c204105cc40b77bac99f2/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:27:13-77
+290            android:authorities="co.id.hustlehouse.firebaseinitprovider"
+290-->[com.google.firebase:firebase-common:20.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/61e5283ea22c204105cc40b77bac99f2/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:28:13-72
+291            android:directBootAware="true"
+291-->[com.google.firebase:firebase-common:20.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/61e5283ea22c204105cc40b77bac99f2/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:29:13-43
+292            android:exported="false"
+292-->[com.google.firebase:firebase-common:20.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/61e5283ea22c204105cc40b77bac99f2/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:30:13-37
+293            android:initOrder="100" />
+293-->[com.google.firebase:firebase-common:20.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/61e5283ea22c204105cc40b77bac99f2/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:31:13-36
+294
+295        <meta-data
+295-->[com.google.android.gms:play-services-basement:18.2.0] /Users/cranium-fajar/.gradle/caches/transforms-3/f5aeeb70e4aa208ac830e747eaf33ddc/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
+296            android:name="com.google.android.gms.version"
+296-->[com.google.android.gms:play-services-basement:18.2.0] /Users/cranium-fajar/.gradle/caches/transforms-3/f5aeeb70e4aa208ac830e747eaf33ddc/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
+297            android:value="@integer/google_play_services_version" />
+297-->[com.google.android.gms:play-services-basement:18.2.0] /Users/cranium-fajar/.gradle/caches/transforms-3/f5aeeb70e4aa208ac830e747eaf33ddc/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
+298        <!--
+299         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+300         with the application context. This config is merged in with the host app's manifest,
+301         but there can only be one provider with the same authority activated at any given
+302         point; so if the end user has two or more different apps that use Facebook SDK, only the
+303         first one will be able to use the provider. To work around this problem, we use the
+304         following placeholder in the authority to identify each host application as if it was
+305         a completely different provider.
+306        -->
+307        <provider
+307-->[com.facebook.android:facebook-core:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/09a41d63f7eb4a4514e59eeed2649797/transformed/jetified-facebook-core-16.1.3/AndroidManifest.xml:29:9-32:40
+308            android:name="com.facebook.internal.FacebookInitProvider"
+308-->[com.facebook.android:facebook-core:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/09a41d63f7eb4a4514e59eeed2649797/transformed/jetified-facebook-core-16.1.3/AndroidManifest.xml:30:13-70
+309            android:authorities="co.id.hustlehouse.FacebookInitProvider"
+309-->[com.facebook.android:facebook-core:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/09a41d63f7eb4a4514e59eeed2649797/transformed/jetified-facebook-core-16.1.3/AndroidManifest.xml:31:13-72
+310            android:exported="false" />
+310-->[com.facebook.android:facebook-core:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/09a41d63f7eb4a4514e59eeed2649797/transformed/jetified-facebook-core-16.1.3/AndroidManifest.xml:32:13-37
+311
+312        <receiver
+312-->[com.facebook.android:facebook-core:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/09a41d63f7eb4a4514e59eeed2649797/transformed/jetified-facebook-core-16.1.3/AndroidManifest.xml:34:9-40:20
+313            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+313-->[com.facebook.android:facebook-core:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/09a41d63f7eb4a4514e59eeed2649797/transformed/jetified-facebook-core-16.1.3/AndroidManifest.xml:35:13-86
+314            android:exported="false" >
+314-->[com.facebook.android:facebook-core:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/09a41d63f7eb4a4514e59eeed2649797/transformed/jetified-facebook-core-16.1.3/AndroidManifest.xml:36:13-37
+315            <intent-filter>
+315-->[com.facebook.android:facebook-core:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/09a41d63f7eb4a4514e59eeed2649797/transformed/jetified-facebook-core-16.1.3/AndroidManifest.xml:37:13-39:29
+316                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+316-->[com.facebook.android:facebook-core:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/09a41d63f7eb4a4514e59eeed2649797/transformed/jetified-facebook-core-16.1.3/AndroidManifest.xml:38:17-95
+316-->[com.facebook.android:facebook-core:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/09a41d63f7eb4a4514e59eeed2649797/transformed/jetified-facebook-core-16.1.3/AndroidManifest.xml:38:25-92
+317            </intent-filter>
+318        </receiver>
+319        <receiver
+319-->[com.facebook.android:facebook-core:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/09a41d63f7eb4a4514e59eeed2649797/transformed/jetified-facebook-core-16.1.3/AndroidManifest.xml:41:9-47:20
+320            android:name="com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver"
+320-->[com.facebook.android:facebook-core:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/09a41d63f7eb4a4514e59eeed2649797/transformed/jetified-facebook-core-16.1.3/AndroidManifest.xml:42:13-118
+321            android:exported="false" >
+321-->[com.facebook.android:facebook-core:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/09a41d63f7eb4a4514e59eeed2649797/transformed/jetified-facebook-core-16.1.3/AndroidManifest.xml:43:13-37
+322            <intent-filter>
+322-->[com.facebook.android:facebook-core:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/09a41d63f7eb4a4514e59eeed2649797/transformed/jetified-facebook-core-16.1.3/AndroidManifest.xml:44:13-46:29
+323                <action android:name="com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED" />
+323-->[com.facebook.android:facebook-core:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/09a41d63f7eb4a4514e59eeed2649797/transformed/jetified-facebook-core-16.1.3/AndroidManifest.xml:45:17-103
+323-->[com.facebook.android:facebook-core:16.1.3] /Users/cranium-fajar/.gradle/caches/transforms-3/09a41d63f7eb4a4514e59eeed2649797/transformed/jetified-facebook-core-16.1.3/AndroidManifest.xml:45:25-100
+324            </intent-filter>
+325        </receiver>
+326
+327        <uses-library
+327-->[androidx.window:window:1.0.0-beta04] /Users/cranium-fajar/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+328            android:name="androidx.window.extensions"
+328-->[androidx.window:window:1.0.0-beta04] /Users/cranium-fajar/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+329            android:required="false" />
+329-->[androidx.window:window:1.0.0-beta04] /Users/cranium-fajar/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+330        <uses-library
+330-->[androidx.window:window:1.0.0-beta04] /Users/cranium-fajar/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+331            android:name="androidx.window.sidecar"
+331-->[androidx.window:window:1.0.0-beta04] /Users/cranium-fajar/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+332            android:required="false" />
+332-->[androidx.window:window:1.0.0-beta04] /Users/cranium-fajar/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+333
+334        <provider
+334-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:31:9-39:20
+335            android:name="androidx.startup.InitializationProvider"
+335-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:32:13-67
+336            android:authorities="co.id.hustlehouse.androidx-startup"
+336-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:33:13-68
+337            android:exported="false" >
+337-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:34:13-37
+338            <meta-data
+338-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:36:13-38:52
+339                android:name="androidx.work.WorkManagerInitializer"
+339-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:37:17-68
+340                android:value="androidx.startup" />
+340-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:38:17-49
+341            <meta-data
+341-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+342                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+342-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+343                android:value="androidx.startup" />
+343-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+344        </provider>
+345
+346        <service
+346-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:41:9-46:35
+347            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+347-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:42:13-88
+348            android:directBootAware="false"
+348-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:43:13-44
+349            android:enabled="@bool/enable_system_alarm_service_default"
+349-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:44:13-72
+350            android:exported="false" />
+350-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:45:13-37
+351        <service
+351-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:47:9-53:35
+352            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+352-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:48:13-84
+353            android:directBootAware="false"
+353-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:49:13-44
+354            android:enabled="@bool/enable_system_job_service_default"
+354-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:50:13-70
+355            android:exported="true"
+355-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:51:13-36
+356            android:permission="android.permission.BIND_JOB_SERVICE" />
+356-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:52:13-69
+357        <service
+357-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:54:9-59:35
+358            android:name="androidx.work.impl.foreground.SystemForegroundService"
+358-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:55:13-81
+359            android:directBootAware="false"
+359-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:56:13-44
+360            android:enabled="@bool/enable_system_foreground_service_default"
+360-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:57:13-77
+361            android:exported="false" />
+361-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:58:13-37
+362
+363        <receiver
+363-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:61:9-66:35
+364            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+364-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:62:13-88
+365            android:directBootAware="false"
+365-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:63:13-44
+366            android:enabled="true"
+366-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:64:13-35
+367            android:exported="false" />
+367-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:65:13-37
+368        <receiver
+368-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:67:9-77:20
+369            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+369-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:68:13-106
+370            android:directBootAware="false"
+370-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:69:13-44
+371            android:enabled="false"
+371-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:70:13-36
+372            android:exported="false" >
+372-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:71:13-37
+373            <intent-filter>
+373-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:73:13-76:29
+374                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+374-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:74:17-87
+374-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:74:25-84
+375                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+375-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:75:17-90
+375-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:75:25-87
+376            </intent-filter>
+377        </receiver>
+378        <receiver
+378-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:78:9-88:20
+379            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+379-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:79:13-104
+380            android:directBootAware="false"
+380-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:80:13-44
+381            android:enabled="false"
+381-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:81:13-36
+382            android:exported="false" >
+382-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:82:13-37
+383            <intent-filter>
+383-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:84:13-87:29
+384                <action android:name="android.intent.action.BATTERY_OKAY" />
+384-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:85:17-77
+384-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:85:25-74
+385                <action android:name="android.intent.action.BATTERY_LOW" />
+385-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:86:17-76
+385-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:86:25-73
+386            </intent-filter>
+387        </receiver>
+388        <receiver
+388-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:89:9-99:20
+389            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+389-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:90:13-104
+390            android:directBootAware="false"
+390-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:91:13-44
+391            android:enabled="false"
+391-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:92:13-36
+392            android:exported="false" >
+392-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:93:13-37
+393            <intent-filter>
+393-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:95:13-98:29
+394                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+394-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:96:17-83
+394-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:96:25-80
+395                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+395-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:97:17-82
+395-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:97:25-79
+396            </intent-filter>
+397        </receiver>
+398        <receiver
+398-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:100:9-109:20
+399            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+399-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:101:13-103
+400            android:directBootAware="false"
+400-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:102:13-44
+401            android:enabled="false"
+401-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:103:13-36
+402            android:exported="false" >
+402-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:104:13-37
+403            <intent-filter>
+403-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:106:13-108:29
+404                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+404-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:107:17-79
+404-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:107:25-76
+405            </intent-filter>
+406        </receiver>
+407        <receiver
+407-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:110:9-121:20
+408            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+408-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:111:13-88
+409            android:directBootAware="false"
+409-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:112:13-44
+410            android:enabled="false"
+410-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:113:13-36
+411            android:exported="false" >
+411-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:114:13-37
+412            <intent-filter>
+412-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:116:13-120:29
+413                <action android:name="android.intent.action.BOOT_COMPLETED" />
+413-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:87:17-79
+413-->[com.onesignal:notifications:5.0.4] /Users/cranium-fajar/.gradle/caches/transforms-3/3b6982b178a7416ebae74c04c1581644/transformed/jetified-notifications-5.0.4/AndroidManifest.xml:87:25-76
+414                <action android:name="android.intent.action.TIME_SET" />
+414-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:118:17-73
+414-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:118:25-70
+415                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+415-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:119:17-81
+415-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:119:25-78
+416            </intent-filter>
+417        </receiver>
+418        <receiver
+418-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:122:9-131:20
+419            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+419-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:123:13-99
+420            android:directBootAware="false"
+420-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:124:13-44
+421            android:enabled="@bool/enable_system_alarm_service_default"
+421-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:125:13-72
+422            android:exported="false" >
+422-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:126:13-37
+423            <intent-filter>
+423-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:128:13-130:29
+424                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+424-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:129:17-98
+424-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:129:25-95
+425            </intent-filter>
+426        </receiver>
+427        <receiver
+427-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:132:9-142:20
+428            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+428-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:133:13-78
+429            android:directBootAware="false"
+429-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:134:13-44
+430            android:enabled="true"
+430-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:135:13-35
+431            android:exported="true"
+431-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:136:13-36
+432            android:permission="android.permission.DUMP" >
+432-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:137:13-57
+433            <intent-filter>
+433-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:139:13-141:29
+434                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+434-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:140:17-88
+434-->[androidx.work:work-runtime:2.7.1] /Users/cranium-fajar/.gradle/caches/transforms-3/c8e25f60706e198163525ec7d2d7c16e/transformed/work-runtime-2.7.1/AndroidManifest.xml:140:25-85
+435            </intent-filter>
+436        </receiver>
+437        <receiver
+437-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+438            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+438-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+439            android:directBootAware="false"
+439-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+440            android:enabled="true"
+440-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+441            android:exported="true"
+441-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+442            android:permission="android.permission.DUMP" >
+442-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+443            <intent-filter>
+443-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+444                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+444-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+444-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+445            </intent-filter>
+446            <intent-filter>
+446-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+447                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+447-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+447-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+448            </intent-filter>
+449            <intent-filter>
+449-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+450                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+450-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+450-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+451            </intent-filter>
+452            <intent-filter>
+452-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+453                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+453-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+453-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cranium-fajar/.gradle/caches/transforms-3/635b1770925726da461e843c0a3c6641/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+454            </intent-filter>
+455        </receiver>
+456
+457        <service
+457-->[androidx.room:room-runtime:2.2.5] /Users/cranium-fajar/.gradle/caches/transforms-3/b4be91b71dbb8833b028ca23c612f59e/transformed/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
+458            android:name="androidx.room.MultiInstanceInvalidationService"
+458-->[androidx.room:room-runtime:2.2.5] /Users/cranium-fajar/.gradle/caches/transforms-3/b4be91b71dbb8833b028ca23c612f59e/transformed/room-runtime-2.2.5/AndroidManifest.xml:26:13-74
+459            android:directBootAware="true"
+459-->[androidx.room:room-runtime:2.2.5] /Users/cranium-fajar/.gradle/caches/transforms-3/b4be91b71dbb8833b028ca23c612f59e/transformed/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
+460            android:exported="false" />
+460-->[androidx.room:room-runtime:2.2.5] /Users/cranium-fajar/.gradle/caches/transforms-3/b4be91b71dbb8833b028ca23c612f59e/transformed/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
+461        <service
+461-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/1d038abe30a5046639d1c27b99118abb/transformed/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:29:9-35:19
+462            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+462-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/1d038abe30a5046639d1c27b99118abb/transformed/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:30:13-103
+463            android:exported="false" >
+463-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/1d038abe30a5046639d1c27b99118abb/transformed/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:31:13-37
+464            <meta-data
+464-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/1d038abe30a5046639d1c27b99118abb/transformed/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:32:13-34:39
+465                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+465-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/1d038abe30a5046639d1c27b99118abb/transformed/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:33:17-94
+466                android:value="cct" />
+466-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/1d038abe30a5046639d1c27b99118abb/transformed/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:34:17-36
+467        </service>
+468        <service
+468-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/547b23d067e91b2209c7bf6043c2380b/transformed/jetified-transport-runtime-3.0.0/AndroidManifest.xml:26:9-30:19
+469            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+469-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/547b23d067e91b2209c7bf6043c2380b/transformed/jetified-transport-runtime-3.0.0/AndroidManifest.xml:27:13-117
+470            android:exported="false"
+470-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/547b23d067e91b2209c7bf6043c2380b/transformed/jetified-transport-runtime-3.0.0/AndroidManifest.xml:28:13-37
+471            android:permission="android.permission.BIND_JOB_SERVICE" >
+471-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/547b23d067e91b2209c7bf6043c2380b/transformed/jetified-transport-runtime-3.0.0/AndroidManifest.xml:29:13-69
+472        </service>
+473
+474        <receiver
+474-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/547b23d067e91b2209c7bf6043c2380b/transformed/jetified-transport-runtime-3.0.0/AndroidManifest.xml:32:9-34:40
+475            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+475-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/547b23d067e91b2209c7bf6043c2380b/transformed/jetified-transport-runtime-3.0.0/AndroidManifest.xml:33:13-132
+476            android:exported="false" />
+476-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/cranium-fajar/.gradle/caches/transforms-3/547b23d067e91b2209c7bf6043c2380b/transformed/jetified-transport-runtime-3.0.0/AndroidManifest.xml:34:13-37
+477    </application>
+478
+479</manifest>
